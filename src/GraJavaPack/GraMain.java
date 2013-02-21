@@ -1,6 +1,7 @@
 package GraJavaPack;
 
 import org.newdawn.slick.BasicGame;
+import java.lang.System;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
@@ -35,7 +36,7 @@ public class GraMain extends BasicGame {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		System.out.println("hehe");
 	}
 
 }
