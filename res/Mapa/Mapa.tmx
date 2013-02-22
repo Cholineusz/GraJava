@@ -8,12 +8,17 @@
  </tileset>
  <layer name="Water" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxNkMsKgzAQRfPtXdZYIVoFrS1EW0E0/mLvwFnM4pDM685NbiGEJJ7iIYr4iUmM4hSz6KkVet9iEJn7yLz1rlCJXURqpntQy+TtbFx+Qu/j9t/ZObPfzhe9FnfMV2g0eCv01OLLvgUvK/odtZ0Zy7f0Ff5m437hLeIv8qaE5oZGcm8+8OPj7P4qkhvw+Qc/2Dzl
+   eJxNkNsOgjAQRPsL/LKPUiGpKAkXTSpIQrD+IrPJediHk7a709lpLyGEJB6iEUV8xSgG8ROzeNIraCvRiyxeaBu0C9RiF5Ge+R70MnVbW1cf8Xu7+Vdmzsy3dUJr5477NR4t2Qqam1iZ9yHLgn9Hb+eO1e/oCn+zsf+TLZIv8qaE54ZHcm8+yOPP2f1VpNaT8wSCUTxY
   </data>
  </layer>
  <layer name="Land" width="10" height="10">
   <data encoding="base64" compression="zlib">
    eJxjZGBgYCKAmYGYG4h5CGDeUXU41YkCsRgBLA7EACaVBLE=
+  </data>
+ </layer>
+ <layer name="TerrainForm" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAfCCKxLYDYEg8fBpwI8LGBOCBOBeJYAubnA7EdEBcQMB+bOmwAWR0u/4BACBCnAXEwDvtIAQDXKwhi
   </data>
  </layer>
 </map>
