@@ -35,7 +35,7 @@ public class GraMain extends BasicGame {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("Update");
+		System.out.println("Nowosc");
 	}
 
 }
