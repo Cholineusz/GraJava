@@ -41,6 +41,7 @@ public class GraMain extends BasicGame {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		System.out.println("HEHE_COS_ZMIENILEM");
 		try {
 			AppGameContainer app = new AppGameContainer(new GraMain());
 			app.setDisplayMode(320, 320, false);
