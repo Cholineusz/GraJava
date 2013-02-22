@@ -3,7 +3,15 @@
  <tileset firstgid="1" name="Land" tilewidth="32" tileheight="32">
   <image source="Tilesets/Tilesheet-land-v5.png" width="320" height="384"/>
  </tileset>
- <layer name="Tile Layer 1" width="10" height="10">
+ <tileset firstgid="121" name="Water" tilewidth="32" tileheight="32">
+  <image source="Tilesets/Tilesheet-water.png" width="256" height="256"/>
+ </tileset>
+ <layer name="Water" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxNkMsKgzAQRfPtXdZYIVoFrS1EW0E0/mLvwFnM4pDM685NbiGEJJ7iIYr4iUmM4hSz6KkVet9iEJn7yLz1rlCJXURqpntQy+TtbFx+Qu/j9t/ZObPfzhe9FnfMV2g0eCv01OLLvgUvK/odtZ0Zy7f0Ff5m437hLeIv8qaE5oZGcm8+8OPj7P4qkhvw+Qc/2Dzl
+  </data>
+ </layer>
+ <layer name="Land" width="10" height="10">
   <data encoding="base64" compression="zlib">
    eJxjZGBgYCKAmYGYG4h5CGDeUXU41YkCsRgBLA7EACaVBLE=
   </data>

@@ -21,7 +21,7 @@ public class GraMain extends BasicGame {
 	@Override
 	public void render(GameContainer arg0, Graphics arg1) throws SlickException {
 		// TODO Auto-generated method stub
-		map.render(50, 50);
+		map.render(0, 0);
 	}
 
 	@Override
@@ -43,7 +43,7 @@ public class GraMain extends BasicGame {
 		// TODO Auto-generated method stub
 		try {
 			AppGameContainer app = new AppGameContainer(new GraMain());
-			app.setDisplayMode(500, 400, false);
+			app.setDisplayMode(320, 320, false);
 			app.start();
 		} catch (SlickException e) {
 			// TODO Auto-generated catch block
