@@ -50,7 +50,7 @@ public class GraMain extends BasicGame {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			
-	//damian je kupe
+
 		}
 	}
 
