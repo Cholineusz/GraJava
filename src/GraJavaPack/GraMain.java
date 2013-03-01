@@ -49,6 +49,8 @@ public class GraMain extends BasicGame {
 		} catch (SlickException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			
+	//damian je kupe
 		}
 	}
 
