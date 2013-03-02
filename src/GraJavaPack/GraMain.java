@@ -27,6 +27,7 @@ public class GraMain extends BasicGame {
 	@Override
 	public void init(GameContainer arg0) throws SlickException {
 		// TODO Auto-generated method stub
+		arg0.setVSync(true);
 		map = new TiledMap("res/Mapa/Mapa.tmx");
 	}
 
