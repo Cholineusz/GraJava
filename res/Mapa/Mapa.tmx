@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="10" height="10" tilewidth="32" tileheight="32">
+<map version="1.0" orientation="orthogonal" width="20" height="20" tilewidth="32" tileheight="32">
  <tileset firstgid="1" name="Land" tilewidth="32" tileheight="32">
   <image source="Tilesets/Tilesheet-land-v5.png" width="320" height="384"/>
  </tileset>
  <tileset firstgid="121" name="Water" tilewidth="32" tileheight="32">
   <image source="Tilesets/Tilesheet-water.png" width="256" height="256"/>
  </tileset>
- <layer name="Water" width="10" height="10">
+ <layer name="Water" width="20" height="20">
   <data encoding="base64" compression="zlib">
-   eJxNkNsOgjAQRPsL/LKPUiGpKAkXTSpIQrD+IrPJediHk7a709lpLyGEJB6iEUV8xSgG8ROzeNIraCvRiyxeaBu0C9RiF5Ge+R70MnVbW1cf8Xu7+Vdmzsy3dUJr5477NR4t2Qqam1iZ9yHLgn9Hb+eO1e/oCn+zsf+TLZIv8qaE54ZHcm8+yOPP2f1VpNaT8wSCUTxY
+   eJztk1sKgzAUBbOF7tmvmibQBwFbK5Raodh0iz2Byb+R9E9hiIQ4nHuvaYwxTSW8OIoIF7ETQTzEXXTCiX4BA74ntOItLI6XmMW50GfJ4/k+ua/kG8hY4ttTa0/dab3hjCvytWTy9C7iOoiR/CU+h68jy0gfA/unQl9knXj/0jvLmdJ8OeNEpjwjx3z8inpnZpz/NcteoI8lviVnN9/m+4cv3dNPJdI9rf38ADNw5rQ=
   </data>
  </layer>
- <layer name="Land" width="10" height="10">
+ <layer name="Land" width="20" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjZGBgYCKAmYGYG4h5CGDeUXU41YkCsRgBLA7EACaVBLE=
+   eJxjZGBgYKISZgZibiDmoRLmHYbmaUExpeZp4cCkmEdIP6nuI8YcLQLmaWExD1k8DohToTiWAvNgOB+IA4E4CIgLiPAvoXAHmRcNxDFEmofNXcjmhgBxGhQHk2ketrDEFkeEzMOmh5L0TEwaJjV/UNs8UjAtzBMFYjEqYXEG6gMABY0d7Q==
   </data>
  </layer>
- <layer name="TerrainForm" width="10" height="10">
+ <layer name="TerrainForm" width="20" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYCAfCCKxLYDYEg8fBpwI8LGBOCBOBeJYAubnA7EdEBcQMB+bOmwAWR0u/4BACBCnAXEwDvtIAQDXKwhi
+   eJxjYKA9EERiWwCxJRBLkWgGTB86cCLTTaTqw2U/CMQBcSoQxzIg/IVPPcx+Zxxy+UBsB8QFaOqRASnhh808XECQCDFk8wj5kxgQAsRpQBzMQH58EgNITXP0BpSGJXo84UtjgxFgKydAAFe8YQsvaRxqiQkLdDVSSHgUYAcAh2kNaQ==
   </data>
  </layer>
 </map>
