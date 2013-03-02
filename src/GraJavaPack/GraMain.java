@@ -2,7 +2,9 @@ package GraJavaPack;
 import org.newdawn.slick.BasicGame;
 
 import java.lang.System;
+import java.util.ArrayList;
 
+import org.newdawn.slick.Animation;
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
@@ -16,12 +18,15 @@ public class GraMain extends BasicGame {
 	
 	//Zmienne obrazkow
 	private TiledMap map;
-	private Image postac;
+	//private Image postac;
 	//Zmienne ruchu
 	float x = 50.0f;
 	float y = 50.0f;
 	float speed = 0.2f;
+	int[] duration ={200,200};
 	SpriteSheet zbior_obrazkow;
+	private Animation walkUP,walkDOWN,walkRIGHT,walkLEFT, postac;
+	
 	
 	public GraMain() {
 		super("GraJava");
@@ -32,7 +37,7 @@ public class GraMain extends BasicGame {
 	public void render(GameContainer arg0, Graphics g) throws SlickException {
 		// Tutaj odtwarzamy grafiki
 		map.render(0, 0);
-		g.drawImage(postac, x ,y);
+		postac.draw(x, y);
 	}
 
 	@Override
@@ -45,8 +50,26 @@ public class GraMain extends BasicGame {
 
 		map = new TiledMap("res/Mapa/Mapa.tmx");
 		
+		//ROZDZIELA na obrazki 32x32 pix
 		zbior_obrazkow = new SpriteSheet("res/Postac/main_edited.png", 32,32 );
-		postac = zbior_obrazkow.getSprite(0, 0);
+		
+		//Laduje obrazki do poszczegolnych kontenerow typu image
+		walkDOWN = new Animation(false);
+		walkUP = new Animation(false);
+		walkLEFT = new Animation(false);
+		walkRIGHT = new Animation(false);
+		for(int i=0;i<3;i++)
+		{
+			walkDOWN.addFrame(zbior_obrazkow.getSubImage(0+i, 0), 100);
+			walkLEFT.addFrame(zbior_obrazkow.getSubImage(0+i, 1),100);
+			walkRIGHT.addFrame(zbior_obrazkow.getSubImage(0+i,2), 100);
+			walkUP.addFrame(zbior_obrazkow.getSubImage(0+i, 3),100);
+		}
+		
+		
+		
+		
+		postac = walkLEFT;
 		//postac = new Image("res/Postac/mainc.png");
 	}
 
@@ -58,18 +81,26 @@ public class GraMain extends BasicGame {
 		Input klik = gc.getInput();
 		if(klik.isKeyDown(Input.KEY_D))
 		{
+			postac = walkRIGHT;
+			postac.update(delta);
 		x += speed * delta;	
 		}
 		if(klik.isKeyDown(Input.KEY_A))
 		{
+			postac = walkLEFT;
+			postac.update(delta);
 		x -= speed * delta;	
 		}
 		if(klik.isKeyDown(Input.KEY_W))
 		{
+			postac = walkUP;
+			postac.update(delta);
 		y -= speed * delta;	
 		}
 		if(klik.isKeyDown(Input.KEY_S))
 		{
+			postac = walkDOWN;
+			postac.update(delta);
 		y += speed * delta;	
 		}
 		
