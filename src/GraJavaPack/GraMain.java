@@ -82,26 +82,37 @@ public class GraMain extends BasicGame {
 		if(klik.isKeyDown(Input.KEY_D))
 		{
 			postac = walkRIGHT;
-			postac.update(delta);
+			
+		
+			
 		x += speed * delta;	
-		}
-		if(klik.isKeyDown(Input.KEY_A))
+		postac.update(delta);
+					}
+		else if(klik.isKeyDown(Input.KEY_A))
 		{
 			postac = walkLEFT;
-			postac.update(delta);
+			
+			
 		x -= speed * delta;	
+		postac.update(delta);
 		}
-		if(klik.isKeyDown(Input.KEY_W))
+		else if(klik.isKeyDown(Input.KEY_W))
 		{
 			postac = walkUP;
+			
 			postac.update(delta);
 		y -= speed * delta;	
 		}
-		if(klik.isKeyDown(Input.KEY_S))
+		else if(klik.isKeyDown(Input.KEY_S))
 		{
 			postac = walkDOWN;
+			
 			postac.update(delta);
 		y += speed * delta;	
+		}else 
+		{
+			postac.setCurrentFrame(1); 	// gdy stoi zeby wracalo do obrazku stania.
+		
 		}
 		
 	}
