@@ -95,7 +95,42 @@ public class GraMain extends BasicGame {
 		
 		//ruch postaci
 		Input klik = gc.getInput();
-		if(klik.isKeyDown(Input.KEY_D))
+		if(klik.isKeyDown(Input.KEY_S) && klik.isKeyDown(Input.KEY_D))
+		{
+			postac = walkRIGHT;
+			postac.update(delta);
+		
+			
+		playerX -= speed * delta;
+		playerY -= speed * delta;	
+			
+		}else if(klik.isKeyDown(Input.KEY_S) && klik.isKeyDown(Input.KEY_A))
+		{
+			postac = walkLEFT;
+			
+			postac.update(delta);
+			playerX += speed * delta;
+			
+			playerY -= speed * delta;	
+		}else if(klik.isKeyDown(Input.KEY_W)&& klik.isKeyDown(Input.KEY_A))
+		{
+postac = walkLEFT;
+			
+			postac.update(delta);
+		playerX += speed * delta;
+		playerY += speed * delta;	
+			
+		}else if(klik.isKeyDown(Input.KEY_W) && klik.isKeyDown(Input.KEY_D))
+		{
+			postac = walkRIGHT;
+			postac.update(delta);
+		
+			
+		playerX -= speed * delta;
+		playerY += speed * delta;	
+			
+		}
+		else if(klik.isKeyDown(Input.KEY_D))
 		{
 			postac = walkRIGHT;
 			postac.update(delta);
@@ -125,7 +160,8 @@ public class GraMain extends BasicGame {
 			
 			postac.update(delta);
 		playerY -= speed * delta;	
-		}else 
+		}
+		else 
 		{
 			postac.setCurrentFrame(1); 	// gdy stoi zeby wracalo do obrazku stania.
 		
