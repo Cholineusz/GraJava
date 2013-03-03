@@ -27,6 +27,14 @@ public class GraMain extends BasicGame {
 	SpriteSheet zbior_obrazkow;
 	private Animation walkUP,walkDOWN,walkRIGHT,walkLEFT, postac;
 	
+	/// Zmienne przechowujace szerokosc i wys mapy
+	private int screenWidth;
+	private int screenHeight;
+	private int cameraX;
+	private int cameraY;
+	private int playerX=0;
+	private int playerY=0;
+	
 	
 	public GraMain() {
 		super("GraJava");
@@ -36,8 +44,16 @@ public class GraMain extends BasicGame {
 	@Override
 	public void render(GameContainer arg0, Graphics g) throws SlickException {
 		// Tutaj odtwarzamy grafiki
-		map.render(0, 0);
-		postac.draw(x, y);
+		// Postac na srodku mapy, mapa zalezna od player x i y
+		screenHeight = arg0.getHeight();
+		screenWidth = arg0.getWidth();
+		
+		cameraX = (screenWidth/2) - (playerX /2);
+		cameraY = (screenHeight/2) - (playerY/2);
+		
+	
+		map.render(playerX, playerY);
+		postac.draw(cameraX, cameraY);
 	}
 
 	@Override
@@ -82,10 +98,10 @@ public class GraMain extends BasicGame {
 		if(klik.isKeyDown(Input.KEY_D))
 		{
 			postac = walkRIGHT;
-			
+		
 		
 			
-		x += speed * delta;	
+		playerX -= speed * delta;	
 		postac.update(delta);
 					}
 		else if(klik.isKeyDown(Input.KEY_A))
@@ -93,7 +109,7 @@ public class GraMain extends BasicGame {
 			postac = walkLEFT;
 			
 			
-		x -= speed * delta;	
+		playerX += speed * delta;	
 		postac.update(delta);
 		}
 		else if(klik.isKeyDown(Input.KEY_W))
@@ -101,14 +117,14 @@ public class GraMain extends BasicGame {
 			postac = walkUP;
 			
 			postac.update(delta);
-		y -= speed * delta;	
+		playerY += speed * delta;	
 		}
 		else if(klik.isKeyDown(Input.KEY_S))
 		{
 			postac = walkDOWN;
 			
 			postac.update(delta);
-		y += speed * delta;	
+		playerY -= speed * delta;	
 		}else 
 		{
 			postac.setCurrentFrame(1); 	// gdy stoi zeby wracalo do obrazku stania.
