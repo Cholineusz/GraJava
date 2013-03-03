@@ -48,8 +48,8 @@ public class GraMain extends BasicGame {
 		screenHeight = arg0.getHeight();
 		screenWidth = arg0.getWidth();
 		
-		cameraX = (screenWidth/2) - (playerX /2);
-		cameraY = (screenHeight/2) - (playerY/2);
+		cameraX = (screenWidth/2);
+		cameraY = (screenHeight/2);
 		
 	
 		map.render(playerX, playerY);
@@ -98,19 +98,19 @@ public class GraMain extends BasicGame {
 		if(klik.isKeyDown(Input.KEY_D))
 		{
 			postac = walkRIGHT;
-		
+			postac.update(delta);
 		
 			
 		playerX -= speed * delta;	
-		postac.update(delta);
+		
 					}
 		else if(klik.isKeyDown(Input.KEY_A))
 		{
 			postac = walkLEFT;
 			
-			
+			postac.update(delta);
 		playerX += speed * delta;	
-		postac.update(delta);
+		
 		}
 		else if(klik.isKeyDown(Input.KEY_W))
 		{
