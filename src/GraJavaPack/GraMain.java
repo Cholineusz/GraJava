@@ -1,4 +1,5 @@
 package GraJavaPack;
+import org.lwjgl.input.Mouse;
 import org.newdawn.slick.BasicGame;
 
 import java.lang.System;
@@ -34,6 +35,7 @@ public class GraMain extends BasicGame {
 	private int cameraY;
 	private int playerX=0;
 	private int playerY=0;
+	private String mousestring = "No mouse";
 	
 	
 	public GraMain() {
@@ -54,6 +56,7 @@ public class GraMain extends BasicGame {
 	
 		map.render(playerX, playerY);
 		postac.draw(cameraX, cameraY);
+		g.drawString(mousestring, 50, 50);
 	}
 
 	@Override
@@ -92,6 +95,14 @@ public class GraMain extends BasicGame {
 	@Override
 	public void update(GameContainer gc, int delta) throws SlickException {
 		// Logic i ai
+		
+		int xpos = Mouse.getX();
+		int ypos = Mouse.getY();
+		
+		mousestring = "Mouse: " + xpos + "|" + ypos +" .";
+		
+		
+		
 		
 		//ruch postaci
 		Input klik = gc.getInput();
