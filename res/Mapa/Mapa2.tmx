@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="20" height="20" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="Snow" tilewidth="32" tileheight="32">
+  <image source="../../../../Downloads/tilesets/Tilesheet_snow.png" width="537" height="193"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJyllMsNgzAQRJ2QFJADBeTgAnKggAARbAXY/TeSjWRLw2iMInF4Euu1x/vDlxDC1emcWwHtTqy1vu/Ow1lOsjrm9M7T2U7Aeq+ynpws7uUYFtJBXyz5oh7fu5HfCPRFyBf1EsSFvhbVP4h86zfXietRc+T4an/VWQONVg9wv+ov14lztgO9SPmq2PAe1FH96Km/XHvupcE9Oezr3epv6xzCs4jxcX/XsM+1NZcmbDXPuFet87+Ctpo/3qP0WFO9B5iXejtMnGd7EHp8nntzpM3zl8V5/keRf+qHc4XrSejwnl98b2dyZmcszIUJ7Als3DeC7+N8AQe3cLA=
+  </data>
+ </layer>
+ <layer name="Items-snow" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJy1VIENgzAMywXABaMXABewXsC4APj/itWaI6KsrSpNsxSpLa7jNiki/8Ga4pHiMOMhRZ9i4hyxcP1gnI36I8PjxRwK6D0LGluKzsyj8dvT38Q8M7k7Pdt9FtF5BD+Y/VPGo/rO4WK+0XFUb+U8VHxYQAvnPrkncHw5XqveVFj3gFdbr5ye9kgrwEVt98J35Kj1k35HoB4L169KvsXwLHAPm1vT88aK3pN7fT8dGT70g+TvHHeH/ljN3CLnAXpzwVtHb5fc/eu/e+Q8W/4g91v36J0mxot8vxPFSQ7OEAsczTMY7V7yPQau1isU9DbyfP1xN/79Wu+j3LWzqPVu67uChv6XOvqI8rmfkeNO6rX5BW/9Ih6A
+  </data>
+ </layer>
+</map>
