@@ -56,7 +56,7 @@ public class GraMain extends BasicGame {
 	
 		map.render(playerX, playerY);
 		postac.draw(cameraX, cameraY);
-		g.drawString(mousestring, 50, 50);
+		
 	}
 
 	@Override
@@ -96,10 +96,8 @@ public class GraMain extends BasicGame {
 	public void update(GameContainer gc, int delta) throws SlickException {
 		// Logic i ai
 		
-		int xpos = Mouse.getX();
-		int ypos = Mouse.getY();
-		
-		mousestring = "Mouse: " + xpos + "|" + ypos +" .";
+	
+	
 		
 		
 		
@@ -205,3 +203,6 @@ postac = walkLEFT;
 	}
 
 }
+
+
+
