@@ -4,19 +4,16 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.tiled.TiledMap;
 
 public class PierwszaMapa extends City {
-	
 	TiledMap map;
 	String name;
+	static String ref="res/Mapa/Mapa.tmx";
 	
-	PierwszaMapa()
-	{
-		name = "Plaza";
-		 try {
-			map = new TiledMap("res/Mapa/Mapa.tmx");
-		} catch (SlickException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public PierwszaMapa() throws SlickException {
+		super(ref);
+		// TODO Auto-generated constructor stub
 	}
+	
+	
+	
 
 }

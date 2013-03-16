@@ -17,8 +17,10 @@ import org.newdawn.slick.tiled.TiledMap;
 
 public class GraMain extends BasicGame {
 	
+	private City[] map_array;
+	
 	//Zmienne obrazkow
-	private TiledMap map;
+	private TiledMap currentmap;
 	//private Image postac;
 	//Zmienne ruchu
 	float x = 50.0f;
@@ -54,7 +56,7 @@ public class GraMain extends BasicGame {
 		cameraY = (screenHeight/2);
 		
 	
-		map.render(playerX, playerY);
+		currentmap.render(playerX, playerY);
 		postac.draw(cameraX, cameraY);
 		
 	}
@@ -66,8 +68,10 @@ public class GraMain extends BasicGame {
 		arg0.setVSync(true);
 
 		// Tutaj wklejamy grafiki
+		map_array = new City[]{new PierwszaMapa(), new DrugaMapa()};
 
-		map = new TiledMap("res/Mapa/Mapa.tmx");
+		currentmap = map_array[0];
+		
 		
 		//ROZDZIELA na obrazki 32x32 pix
 		zbior_obrazkow = new SpriteSheet("res/Postac/main_edited.png", 32,32 );
@@ -104,6 +108,18 @@ public class GraMain extends BasicGame {
 		
 		//ruch postaci
 		Input klik = gc.getInput();
+		
+		if(klik.isKeyDown(Input.KEY_1))
+		{
+			currentmap= map_array[0];
+		}
+		
+		if(klik.isKeyDown(Input.KEY_2))
+		{
+			currentmap= map_array[1];
+		}
+		
+		
 		if(klik.isKeyDown(Input.KEY_S) && klik.isKeyDown(Input.KEY_D))
 		{
 			postac = walkRIGHT;

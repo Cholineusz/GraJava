@@ -7,16 +7,14 @@ public class DrugaMapa extends City {
 	
 	TiledMap map;
 	String name;
+	static String ref="res/Mapa/Mapa2.tmx";
 	
-	DrugaMapa()
-	{
-		name = "Snieg";
-		 try {
-			map = new TiledMap("res/Mapa/Mapa2.tmx");
-		} catch (SlickException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	
+	public DrugaMapa() throws SlickException {
+		super(ref);
+		// TODO Auto-generated constructor stub
 	}
+	
+	
 
 }
