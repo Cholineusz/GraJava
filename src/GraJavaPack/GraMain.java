@@ -15,6 +15,10 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.SpriteSheet;
 import org.newdawn.slick.tiled.TiledMap;
 
+import Maps.City;
+import Maps.DrugaMapa;
+import Maps.PierwszaMapa;
+
 public class GraMain extends BasicGame {
 	
 	private City[] map_array;

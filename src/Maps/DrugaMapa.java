@@ -1,7 +1,8 @@
-package GraJavaPack;
+package Maps;
 
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.tiled.TiledMap;
+
 
 public class DrugaMapa extends City {
 	
