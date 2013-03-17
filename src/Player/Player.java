@@ -6,35 +6,36 @@ import org.newdawn.slick.SpriteSheet;
 
 
 
-public  abstract class Player extends Animation {
+public class Player  {
 	
 	private static final int DOWN = 0;
 	private static final int LEFT = 1;
 	private static final int RIGHT =2;
 	private static final int UP =3;
 	
+	private static SpriteSheet obrazki;
 	
 	static String Nick;
 
-	static Animation[] Walk = new Animation[3];
+	 Animation[] Walk = new Animation[4];
+	
+	public Animation current = new Animation(false);
 	
 	
 	
-	
-	Player(int look)
+	public Player() throws SlickException
 	{
-		super(false);
 		
-		try {
-			load_sprites(new SpriteSheet("res/Postac/main_edited.png", 32,32 ), 1);
-		} catch (SlickException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		obrazki = new SpriteSheet("res/Postac/main_edited.png", 32,32 );
+		
+		load_sprites();
+		
+		current = Walk[DOWN];
+		
 		
 	}
 	
-	private static void load_sprites(SpriteSheet obrazki, int delta)
+	public  void load_sprites()
 	{
 		Walk[DOWN] = new Animation(false);	// DOWN
 		Walk[LEFT] = new Animation(false);	// LEFT
@@ -42,21 +43,49 @@ public  abstract class Player extends Animation {
 		Walk[UP] = new Animation(false);	// UP
 		for(int i=0;i<3;i++)
 		{
-			Walk[DOWN].addFrame(obrazki.getSubImage(delta+i, 0), 100);
-			Walk[LEFT].addFrame(obrazki.getSubImage(delta+i, 1),100);
-			Walk[RIGHT].addFrame(obrazki.getSubImage(delta+i,2), 100);
-			Walk[UP].addFrame(obrazki.getSubImage(delta+i, 3),100);
+			Walk[DOWN].addFrame(obrazki.getSubImage(0+i, 0), 100);
+			Walk[LEFT].addFrame(obrazki.getSubImage(0+i, 1),100);
+			Walk[RIGHT].addFrame(obrazki.getSubImage(0+i,2), 100);
+			Walk[UP].addFrame(obrazki.getSubImage(0+i, 3),100);
 		}
 	}
 	
-	public static Animation WALK_UP()
+	
+	public void WALK_DOWN(int delta)
 	{
-		return Walk[UP];
-		
+		current=Walk[DOWN];
+		current.update(delta);
 		
 	}
 	
+	public void WALK_UP(int delta)
+	{
+		current=Walk[UP];
+		current.update(delta);
+	}
 	
+	public void WALK_LEFT(int delta)
+	{
+		current=Walk[LEFT];
+		current.update(delta);
+	}
+	
+	public void WALK_RIGHT(int delta)
+	{
+		current=Walk[RIGHT];
+		current.update(delta);
+	}
+	
+	public void STAY()
+	{
+		current.setCurrentFrame(1);
+	}
+	
+	
+	public void RENDER(float x, float y)
+	{
+		current.draw(x, y);
+	}
 	
 
 }

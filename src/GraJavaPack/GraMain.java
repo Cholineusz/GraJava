@@ -18,6 +18,7 @@ import org.newdawn.slick.tiled.TiledMap;
 import Maps.City;
 import Maps.DrugaMapa;
 import Maps.PierwszaMapa;
+import Player.Player;
 
 public class GraMain extends BasicGame {
 	
@@ -33,6 +34,8 @@ public class GraMain extends BasicGame {
 	int[] duration ={200,200};
 	SpriteSheet zbior_obrazkow;
 	private Animation walkUP,walkDOWN,walkRIGHT,walkLEFT, postac;
+	
+	Player gracz;
 	
 	/// Zmienne przechowujace szerokosc i wys mapy
 	private int screenWidth;
@@ -61,7 +64,8 @@ public class GraMain extends BasicGame {
 		
 	
 		currentmap.render(playerX, playerY);
-		postac.draw(cameraX, cameraY);
+		
+		gracz.RENDER(cameraX, cameraY);
 		
 	}
 
@@ -76,40 +80,15 @@ public class GraMain extends BasicGame {
 
 		currentmap = map_array[0];
 		
+				
+		gracz = new Player();
 		
-		//ROZDZIELA na obrazki 32x32 pix
-		zbior_obrazkow = new SpriteSheet("res/Postac/main_edited.png", 32,32 );
-		
-		//Laduje obrazki do poszczegolnych kontenerow typu image
-		walkDOWN = new Animation(false);
-		walkUP = new Animation(false);
-		walkLEFT = new Animation(false);
-		walkRIGHT = new Animation(false);
-		for(int i=0;i<3;i++)
-		{
-			walkDOWN.addFrame(zbior_obrazkow.getSubImage(0+i, 0), 100);
-			walkLEFT.addFrame(zbior_obrazkow.getSubImage(0+i, 1),100);
-			walkRIGHT.addFrame(zbior_obrazkow.getSubImage(0+i,2), 100);
-			walkUP.addFrame(zbior_obrazkow.getSubImage(0+i, 3),100);
-		}
-		
-		
-		
-		
-		postac = walkLEFT;
-		//postac = new Image("res/Postac/mainc.png");
+	
 	}
 
 	@Override
 	public void update(GameContainer gc, int delta) throws SlickException {
-		// Logic i ai
-		
-	
-	
-		
-		
-		
-		
+
 		//ruch postaci
 		Input klik = gc.getInput();
 		
@@ -126,8 +105,7 @@ public class GraMain extends BasicGame {
 		
 		if(klik.isKeyDown(Input.KEY_S) && klik.isKeyDown(Input.KEY_D))
 		{
-			postac = walkRIGHT;
-			postac.update(delta);
+			gracz.WALK_RIGHT(delta);
 		
 			
 		playerX -= speed * delta;
@@ -135,24 +113,20 @@ public class GraMain extends BasicGame {
 			
 		}else if(klik.isKeyDown(Input.KEY_S) && klik.isKeyDown(Input.KEY_A))
 		{
-			postac = walkLEFT;
+			gracz.WALK_LEFT(delta);
 			
-			postac.update(delta);
 			playerX += speed * delta;
 			
 			playerY -= speed * delta;	
 		}else if(klik.isKeyDown(Input.KEY_W)&& klik.isKeyDown(Input.KEY_A))
 		{
-postac = walkLEFT;
-			
-			postac.update(delta);
+			gracz.WALK_LEFT(delta);
 		playerX += speed * delta;
 		playerY += speed * delta;	
 			
 		}else if(klik.isKeyDown(Input.KEY_W) && klik.isKeyDown(Input.KEY_D))
 		{
-			postac = walkRIGHT;
-			postac.update(delta);
+			gracz.WALK_RIGHT(delta);
 		
 			
 		playerX -= speed * delta;
@@ -161,8 +135,7 @@ postac = walkLEFT;
 		}
 		else if(klik.isKeyDown(Input.KEY_D))
 		{
-			postac = walkRIGHT;
-			postac.update(delta);
+			gracz.WALK_RIGHT(delta);
 		
 			
 		playerX -= speed * delta;	
@@ -170,29 +143,28 @@ postac = walkLEFT;
 					}
 		else if(klik.isKeyDown(Input.KEY_A))
 		{
-			postac = walkLEFT;
+			gracz.WALK_LEFT(delta);
 			
-			postac.update(delta);
+			
 		playerX += speed * delta;	
 		
 		}
 		else if(klik.isKeyDown(Input.KEY_W))
 		{
-			postac = walkUP;
+			gracz.WALK_UP(delta);
 			
-			postac.update(delta);
+			
 		playerY += speed * delta;	
 		}
 		else if(klik.isKeyDown(Input.KEY_S))
 		{
-			postac = walkDOWN;
+			gracz.WALK_DOWN(delta);
 			
-			postac.update(delta);
 		playerY -= speed * delta;	
 		}
 		else 
 		{
-			postac.setCurrentFrame(1); 	// gdy stoi zeby wracalo do obrazku stania.
+			gracz.STAY();
 		
 		}
 		
